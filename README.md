@@ -4,8 +4,15 @@ A demo app to use a Cesium Viewer within a Vue component
 
 ## Introduction
 
-In my day job, we use Cesium to display 3D models. This is a proof of concept to demonstrate what's 
+In my day job, we use Cesium to display 3D models. This is a proof of concept to demonstrate the minimum
 necessary to integrate Cesium within a Vue component.
+
+## Usage
+
+* `git checkout https://github.com/bluehaoran/cesium-on-vue.git`
+* `npm install`
+* `npm run serve`
+* Visit the URL provided to see Cesium in action!
 
 ## Reproducing this Project
 
