@@ -24,4 +24,19 @@ necessary to integrate Cesium within a Vue component.
 
 ## Notes
 
-Cesium 
+* Before this code sample goes into production, you would want to integrate [`webpack.release.config.js`](https://github.com/AnalyticalGraphicsInc/cesium-webpack-example/blob/master/webpack.release.config.js) into `vue.config.js`. 
+* If your code is more than an SPA, you'll want to tweak the value of `CESIUM_BASE_URL` in `vue.config.js` to something like `/`.
+* Alternatively, you may want to file the Cesium assets under their own directory, in which case, replace the code-block in `vue.config.js` with:
+
+```
+          new CopyWebpackPlugin([{ from: 'node_modules/cesium/Build/Cesium/Workers', to: 'cesium/Workers' }]),
+          new CopyWebpackPlugin([{ from: 'node_modules/cesium/Build/Cesium/ThirdParty', to: 'cesium/ThirdParty' }]),
+          new CopyWebpackPlugin([{ from: 'node_modules/cesium/Build/Cesium/Assets', to: 'cesium/Assets' }]),
+          new CopyWebpackPlugin([{ from: 'node_modules/cesium/Build/Cesium/Widgets', to: 'cesium/Widgets' }]),
+          new webpack.DefinePlugin({
+	          // Define relative base path in cesium for loading assets
+	          CESIUM_BASE_URL: JSON.stringify('cesium')
+          }),
+```
+
+* You will notice two lines that remove the "Critical Dependency" error. *Theoretically* these will be deprecated, and the more correct way of resolving this issue uses the [ContextReplacementPlugin](https://webpack.js.org/plugins/context-replacement-plugin/) from Webpack. However solving this this way was problematic. If anyone knows the correct fix, please let me know!
