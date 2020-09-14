@@ -7,14 +7,15 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "cesium": "^1.64.0",
-    "core-js": "^3.4.4",
-    "vue": "^2.6.10"
+    "@vue/compiler-sfc": "^3.0.0-rc.10",
+    "cesium": "^1.73.0",
+    "core-js": "^3.6.5",
+    "vue": "^3.0.0-rc.10"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.1.0",
-    "@vue/cli-service": "^4.1.0",
-    "vue-template-compiler": "^2.6.10"
+    "@vue/cli-plugin-babel": "^4.5.6",
+    "@vue/cli-service": "^4.5.6",
+    "vue-template-compiler": "^2.6.12"
   },
   "browserslist": [
     "> 1%",
