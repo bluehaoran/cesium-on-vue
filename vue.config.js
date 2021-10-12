@@ -21,6 +21,10 @@ module.exports = {
         // https://github.com/AnalyticalGraphicsInc/cesium-webpack-example/issues/6
         unknownContextCritical: false,
         unknownContextRegExp: /\/cesium\/cesium\/Source\/Core\/buildModuleUrl\.js/,
+	rules: [{
+		test: /\.js$/,
+		use: { loader: require.resolve('@open-wc/webpack-import-meta-loader') }
+	}]
       }
   }
 }
